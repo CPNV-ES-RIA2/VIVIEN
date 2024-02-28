@@ -8,6 +8,6 @@ defineProps({
 </script>
 <template>
     <select>
-        <option v-for="language in languages" value="{{ language }}">{{ language }}</option>
+        <option v-for="language in languages" :value="language">{{ language }}</option>
     </select>
 </template>
