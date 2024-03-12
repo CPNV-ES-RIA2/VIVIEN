@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace gateway.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("Analyze")]
     public class GatewayController : ControllerBase
     {
         private static ILabelDetector labelDetector = new LabelDetector();
