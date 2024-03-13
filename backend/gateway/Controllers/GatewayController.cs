@@ -11,16 +11,16 @@ namespace gateway.Controllers
         public GatewayController() { }
 
         [HttpPost(Name = "Analyze")]
-        public async Task<List<ImageTag>> Analyze(IFormFile formFile)
+        public async Task<List<ImageTag>> Analyze(IFormFile file)
         {
             try
             {
-                FileInfo fileInfo = new FileInfo(formFile.FileName);
-                string fileName = formFile.FileName + "_" + DateTime.Now.Ticks.ToString() + fileInfo.Extension;
+                FileInfo fileInfo = new FileInfo(file.FileName);
+                string fileName = file.FileName + "_" + DateTime.Now.Ticks.ToString() + fileInfo.Extension;
                 string filePath = Path.Combine(Directory.GetCurrentDirectory(), fileName);
                 using (var fileStream = new FileStream(filePath, FileMode.Create))
                 {
-                    formFile.CopyTo(fileStream);
+                    file.CopyTo(fileStream);
                 }
                 return await labelDetector.Analyze(new Uri(filePath));
             }
