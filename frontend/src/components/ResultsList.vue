@@ -1,10 +1,13 @@
 <script setup>
-defineProps({
+import {watch} from 'vue'
+
+const props = defineProps({
     results: {
         type: Object,
         required: true
     }
 })
+
 </script>
 <template>
     <table>
@@ -14,8 +17,8 @@ defineProps({
         </thead>
         <tbody>
             <tr v-for="result in results">
-                <td>{{ result.description }}</td>
-                <td>{{ result.value }}</td>
+                <td>{{ result.name }}</td>
+                <td>{{ result.confidence }}</td>
             </tr>
         </tbody>
     </table>

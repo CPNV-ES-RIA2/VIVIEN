@@ -3,10 +3,10 @@ import { HttpResponse, http } from 'msw'
 import { setupServer } from 'msw/node'
 
 const labels = [
-    {description: 'test', value: 0.1},
-    {description: 'test', value: 0.1},
-    {description: 'test', value: 0.1},
-    {description: 'test', value: 0.1}
+    {name: 'test', confidence: 0.1},
+    {name: 'test', confidence: 0.1},
+    {name: 'test', confidence: 0.1},
+    {name: 'test', confidence: 0.1}
 ]
 
 export const restHandlers = [
