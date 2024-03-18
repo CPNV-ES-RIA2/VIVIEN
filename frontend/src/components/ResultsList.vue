@@ -1,5 +1,11 @@
 <script setup>
-import {watch} from 'vue'
+import { computed } from 'vue';
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n();
+
+const labelDescriptionHeader = computed(() => {return t('labelDescriptionHeader')});
+const labelConfidenceHeader = computed(() => {return t('labelConfidenceHeader')});
 
 const props = defineProps({
     results: {
@@ -12,8 +18,8 @@ const props = defineProps({
 <template>
     <table>
         <thead>
-            <th>Description</th>
-            <th>Value</th>
+            <th>{{ labelDescriptionHeader }}</th>
+            <th>{{ labelConfidenceHeader }}</th>
         </thead>
         <tbody>
             <tr v-for="result in results">
