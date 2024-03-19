@@ -3,7 +3,6 @@ import { ref, reactive } from 'vue';
 import ImagePicker from './components/ImagePicker.vue';
 import ResultsList from './components/ResultsList.vue';
 import LanguagePicker from './components/LanguagePicker.vue';
-import AnalysisOptions from './components/AnalysisOptions.vue';
 
 var results = ref([{name: 'test', confidence: 0.1}, {name: 'test', confidence: 0.1}, {name: 'test', confidence: 0.1}, {name: 'test', confidence: 0.1}]);
 
