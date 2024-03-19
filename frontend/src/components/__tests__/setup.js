@@ -1,6 +1,11 @@
-import { afterAll, afterEach, beforeAll } from 'vitest'
-import { HttpResponse, http } from 'msw'
-import { setupServer } from 'msw/node'
+import { afterAll, afterEach, beforeAll } from 'vitest';
+import { HttpResponse, http } from 'msw';
+import { setupServer } from 'msw/node';
+
+import { config } from '@vue/test-utils';
+import i18n from '../../i18n/index.js';
+
+config.global.plugins = [i18n];
 
 const labels = [
     {name: 'test', confidence: 0.1},
@@ -10,7 +15,7 @@ const labels = [
 ]
 
 export const restHandlers = [
-    http.post('http://localhost/analyze', () => {
+    http.post('/Analyze', () => {
         return HttpResponse.json(labels)
     }),
 ]

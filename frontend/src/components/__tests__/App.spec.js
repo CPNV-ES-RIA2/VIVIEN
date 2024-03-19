@@ -5,16 +5,32 @@ import App from '../../App.vue'
 
 describe('App', () => {
   it('renders properly', () => {
-    const wrapper = mount(App)
-    expect(wrapper.text()).toContain('Number of labels')
+    // Given
+    const wrapper = mount(App);
+
+    // When
+
+    // Expect
+    expect(wrapper.text()).toContain('Number of labels');
+    expect(wrapper.text()).toContain('Description');
+    expect(wrapper.text()).toContain('Minimum confidence');
+    expect(wrapper.text()).toContain('Confidence');
   })
 
-  it('changes language properly', () => {
-    const wrapper = mount(App)
-    const languagePicker = wrapper.find('select')
-    languagePicker.setValue('french')
-    languagePicker.trigger('change')
-    expect(wrapper.text()).toContain('Nombre de labels')
+  it('changes language properly', async () => {
+    // Given
+    const wrapper = mount(App);
+    const languagePicker = wrapper.find('select');
+
+    // When
+    languagePicker.setValue('fr');
+    await wrapper.vm.$nextTick();
+
+    // Expect
+    expect(wrapper.text()).toContain("Nombre d'étiquettes");
+    expect(wrapper.text()).toContain("Déscription");
+    expect(wrapper.text()).toContain("Confiance minimale");
+    expect(wrapper.text()).toContain("Confiance");
   })
 
   it('displays results properly', () => {
