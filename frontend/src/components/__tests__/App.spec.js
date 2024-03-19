@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 
-import { mount } from '@vue/test-utils'
+import { mount, flushPromises } from '@vue/test-utils'
 import App from '../../App.vue'
 
 describe('App', () => {
@@ -33,7 +33,24 @@ describe('App', () => {
     expect(wrapper.text()).toContain("Confiance");
   })
 
-  it('displays results properly', () => {
-    // TODO: Add testing logic here
+  it('displays results properly', async () => {
+    // Given
+    const wrapper = mount(App);
+    const imagePicker = wrapper.find('#file-picker');
+    var file = new File([0x0], "test-file.png", { type: "image/png" });
+
+    // When
+    Object.defineProperty(imagePicker.element, 'files', {
+      value: [file],
+      writable: false
+    });
+    imagePicker.trigger('change');
+    await flushPromises();
+
+    // Expect
+    expect(wrapper.text()).toContain("cucumber");
+    expect(wrapper.text()).toContain("potatoes");
+    expect(wrapper.text()).toContain("carrots");
+    expect(wrapper.text()).toContain("salad");
   })
 })

@@ -8,10 +8,10 @@ import i18n from '../../i18n/index.js';
 config.global.plugins = [i18n];
 
 const labels = [
-    {name: 'test', confidence: 0.1},
-    {name: 'test', confidence: 0.1},
-    {name: 'test', confidence: 0.1},
-    {name: 'test', confidence: 0.1}
+    {name: 'cucumber', confidence: 0.1},
+    {name: 'potatoes', confidence: 0.1},
+    {name: 'carrots', confidence: 0.1},
+    {name: 'salad', confidence: 0.1}
 ]
 
 export const restHandlers = [

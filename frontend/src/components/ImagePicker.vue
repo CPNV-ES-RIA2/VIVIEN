@@ -12,7 +12,11 @@ var labelCount = ref(10);
 var confidence = ref(0.9);
 
 function onFileSelected(event) {
-    imagePreviewSource.value = URL.createObjectURL(event.target.files[0]);
+    try {
+        imagePreviewSource.value = URL.createObjectURL(event.target.files[0]);
+    } catch (ex) {
+        console.error("Failed to create object URL");
+    }
     let data = new FormData();
     data.append('file', event.target.files[0]);
     data.append('labelCount', labelCount.value);
