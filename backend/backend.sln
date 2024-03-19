@@ -5,6 +5,10 @@ VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "gateway", "gateway\gateway.csproj", "{0C8297BA-D3CF-4EBB-8FED-431121825861}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureDataObject", "AzureDataObject\AzureDataObject.csproj", "{E72B2BB8-25B6-486E-8E91-5DDAC4691545}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureLabelDetector", "AzureLabelDetector\AzureLabelDetector.csproj", "{55EF8AD5-3722-4D69-B003-F7C4ABA62AB9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{0C8297BA-D3CF-4EBB-8FED-431121825861}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0C8297BA-D3CF-4EBB-8FED-431121825861}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0C8297BA-D3CF-4EBB-8FED-431121825861}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E72B2BB8-25B6-486E-8E91-5DDAC4691545}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E72B2BB8-25B6-486E-8E91-5DDAC4691545}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E72B2BB8-25B6-486E-8E91-5DDAC4691545}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E72B2BB8-25B6-486E-8E91-5DDAC4691545}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55EF8AD5-3722-4D69-B003-F7C4ABA62AB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55EF8AD5-3722-4D69-B003-F7C4ABA62AB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55EF8AD5-3722-4D69-B003-F7C4ABA62AB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55EF8AD5-3722-4D69-B003-F7C4ABA62AB9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

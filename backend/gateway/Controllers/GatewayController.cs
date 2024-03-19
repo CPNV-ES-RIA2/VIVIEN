@@ -1,5 +1,6 @@
-﻿using gateway.Models;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using DataObject;
+using LabelDetector;
 
 namespace gateway.Controllers
 {
@@ -7,11 +8,13 @@ namespace gateway.Controllers
     [Route("Analyze")]
     public class GatewayController : ControllerBase
     {
-        private static ILabelDetector labelDetector = new LabelDetector();
+        private static ILabelDetector labelDetector = new AzureLabelDetector();
+        private static Uri bucketUri = new Uri(Environment.GetEnvironmentVariable("BUCKET_URI"));
+        private static IDataObject dataObject = new AzureDataObject(bucketUri);
         public GatewayController() { }
 
         [HttpPost(Name = "Analyze")]
-        public async Task<List<ImageTag>> Analyze(IFormFile file)
+        public async Task<List<ImageTag>> Analyze(IFormFile file, int maxLabelCount = 10, float minConfidence = 0.9f)
         {
             try
             {
@@ -22,7 +25,11 @@ namespace gateway.Controllers
                 {
                     file.CopyTo(fileStream);
                 }
-                return await labelDetector.Analyze(new Uri(filePath));
+                Uri remoteObjectPath = new Uri(bucketUri.AbsoluteUri + $"/{fileName}");
+                await dataObject.Upload(new Uri(filePath), remoteObjectPath);
+                Uri remoteObjectPathPublish = await dataObject.Publish(remoteObjectPath);
+                System.IO.File.Delete(filePath);
+                return await labelDetector.Analyze(remoteObjectPathPublish, maxLabelCount, minConfidence);
             }
             catch (Exception ex)
             {

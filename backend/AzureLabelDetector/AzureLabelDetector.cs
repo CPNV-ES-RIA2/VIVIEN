@@ -2,14 +2,15 @@
 using Azure.AI.Vision.Common;
 using Azure.AI.Vision.ImageAnalysis;
 
-namespace gateway.Models
+namespace LabelDetector
 {
-    public class LabelDetector : ILabelDetector
+    public class AzureLabelDetector : ILabelDetector
     {
         private VisionServiceOptions options;
-        public LabelDetector()
+        public AzureLabelDetector()
         {
-            this.options = new VisionServiceOptions(Environment.GetEnvironmentVariable("VISION_ENDPOINT"), new AzureKeyCredential(Environment.GetEnvironmentVariable("VISION_KEY")));
+            this.options = new VisionServiceOptions(Environment.GetEnvironmentVariable("VISION_ENDPOINT"),
+                new AzureKeyCredential(Environment.GetEnvironmentVariable("VISION_KEY")));
         }
 
         public async Task<List<ImageTag>> Analyze(Uri uri, int maxLabelCount = 10, float precision = 0.9f)
@@ -33,7 +34,7 @@ namespace gateway.Models
 
             using ImageAnalyzer analyzer = new ImageAnalyzer(options, imageSource, imageAnalysisOptions);
 
-            ImageAnalysisResult result = await analyzer.AnalyzeAsync();
+            ImageAnalysisResult result = analyzer.Analyze();
 
             List<ImageTag> tags = new List<ImageTag>();
 

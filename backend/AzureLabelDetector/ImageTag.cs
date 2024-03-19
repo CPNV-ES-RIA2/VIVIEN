@@ -1,7 +1,8 @@
-﻿namespace gateway.Models
+﻿namespace LabelDetector
 {
     public class ImageTag
     {
+
         public string Name { get; set; }
         public double Confidence { get; set; }
         public ImageTag(string name, double confidence)
