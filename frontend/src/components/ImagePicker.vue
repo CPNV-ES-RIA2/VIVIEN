@@ -39,9 +39,11 @@ const emits = defineEmits([
 ])
 </script>
 <template>
-    <form id="image-picker">
-        <img class="rounded mx-auto d-block img-fluid" :src="imagePreviewSource" @click="$refs.filepicker.click()">
-        <input type="file" id="file-picker" name="file" accept="image/*" ref="filepicker" @change="onFileSelected"/>
+    <form id="image-picker" class="mb-3">
+        <div class="row mb-3">
+            <img class="rounded mx-auto d-block img-fluid" :src="imagePreviewSource" @click="$refs.filepicker.click()">
+            <input type="file" id="file-picker" name="file" accept="image/*" ref="filepicker" @change="onFileSelected"/>
+        </div>
         <div class="row">
             <div class="col">
                 <div class="row">
@@ -63,10 +65,9 @@ const emits = defineEmits([
     #file-picker {
         display: none;
     }
-    #image-picker > img {
+    #image-picker > div > img {
         position: relative;
-        width: 50%;
-        min-height: 100px;
+        min-height: 200px;
         padding-top: 50%;
         border: 2px dashed #03A062;
         border-radius: 4px;

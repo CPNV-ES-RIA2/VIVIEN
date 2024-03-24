@@ -9,7 +9,7 @@ function onUpdateLocale(event) {
 }
 </script>
 <template>
-    <select @change="onUpdateLocale($event)">
+    <select @change="onUpdateLocale($event)" class="form-select">
         <option v-for="locale in availableLocales" :value="locale">{{ locale }}</option>
     </select>
 </template>

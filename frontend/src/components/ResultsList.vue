@@ -16,10 +16,12 @@ const props = defineProps({
 
 </script>
 <template>
-    <table>
+    <table class="table table-bordered table-striped">
         <thead>
-            <th>{{ labelDescriptionHeader }}</th>
-            <th>{{ labelConfidenceHeader }}</th>
+            <tr>
+                <th scope="col">{{ labelDescriptionHeader }}</th>
+                <th scope="col">{{ labelConfidenceHeader }}</th>
+            </tr>
         </thead>
         <tbody>
             <tr v-for="result in results">

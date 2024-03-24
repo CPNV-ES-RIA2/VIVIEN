@@ -12,14 +12,14 @@ function onAnalyzed(labels) {
 </script>
 
 <template>
-  <header>
+<nav class="navbar navbar-light bg-light justify-content-between p-4 mb-3">
+  <a class="navbar-brand">RIA2</a>
+  <div class="form-inline">
     <LanguagePicker/>
-  </header>
-  <div class="wrapper">
+  </div>
+</nav>
+  <div class="container">
     <ImagePicker @analyzed="onAnalyzed"/>
     <ResultsList :results="results"/>
   </div>
 </template>
-
-<style scoped>
-</style>
