@@ -39,6 +39,9 @@ flowchart LR
     Gateway <-->|REST| WebClient
 ```
 
+And here is the design mockup of the frontend application.
+![](documentation/mockup.png)
+
 ## Getting Started
 Before you start using this project, there are a few things you need to make sure of.
 
