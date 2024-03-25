@@ -19,8 +19,8 @@ function onFileSelected(event) {
     }
     let data = new FormData();
     data.append('file', event.target.files[0]);
-    data.append('labelCount', labelCount.value);
-    data.append('confidence', confidence.value);
+    data.append('maxLabelCount', labelCount.value);
+    data.append('minConfidence', confidence.value);
 
     fetch('/Analyze', {
         method: 'POST',
