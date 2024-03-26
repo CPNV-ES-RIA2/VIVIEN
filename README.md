@@ -62,6 +62,7 @@ For this project to work, you need to set a few environment variables you need t
 | VISION_KEY | 32 characters long api key | The api key to use for label detection |
 | AZURE_DATA_STORAGE_CONNECTION_STRING | Connection URI | The connection URI that contains all the required information to access the data container |
 | BUCKET_URI | Uri | A uri to the bucket |
+| VITE_API_GATEWAY_URL | Uri | A uri to the backend api |
 
 
 ## Deployment
@@ -100,7 +101,7 @@ $ docker build -f ".\gateway\Dockerfile" --force-rm -t cpnv-es-ria2/gateway  --b
 Now that you either pulled the images or built them, you can start the containers, to do this run the following commands.
 Run frontend:
 ```shell
-$ docker run --name frontend -p 80:80 cpnv-es-ria2/frontend
+$ docker run --name frontend -p 80:80 -e VITE_API_GATEWAY_URL=<VITE_API_GATEWAY_URL> cpnv-es-ria2/frontend
 ```
 
 Run backend:
