@@ -15,7 +15,7 @@ const labels = [
 ]
 
 export const restHandlers = [
-    http.post('/Analyze', () => {
+    http.post('VITE_API_GATEWAY_URL_PLACEHOLDER/Analyze', () => {
         return HttpResponse.json(labels)
     }),
 ]

@@ -22,7 +22,7 @@ function onFileSelected(event) {
     data.append('maxLabelCount', labelCount.value);
     data.append('minConfidence', confidence.value);
 
-    fetch('/Analyze', {
+    fetch(`VITE_API_GATEWAY_URL_PLACEHOLDER/Analyze`, {
         method: 'POST',
         body: data
     }).then(
