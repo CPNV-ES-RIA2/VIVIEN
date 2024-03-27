@@ -1,6 +1,6 @@
 {
     "labelDescriptionHeader": "Description",
-    "imageTagsCountLabel": "Number of labels",
+    "imageTagsCountLabel": "Maximum number of labels",
     "minimumConfidenceLabel": "Minimum confidence",
     "labelConfidenceHeader": "Confidence"
 }

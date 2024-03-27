@@ -1,6 +1,6 @@
 {
     "labelDescriptionHeader": "Beschreibung",
-    "imageTagsCountLabel": "Anzahl der Etiketten",
+    "imageTagsCountLabel": "Maximale Anzahl an Etiketten",
     "minimumConfidenceLabel": "Minimales Vertrauen",
     "labelConfidenceHeader": "Vertrauen"
 }

@@ -11,7 +11,7 @@ describe('App', () => {
     // When
 
     // Expect
-    expect(wrapper.text()).toContain('Number of labels');
+    expect(wrapper.text()).toContain('Maximum number of labels');
     expect(wrapper.text()).toContain('Description');
     expect(wrapper.text()).toContain('Minimum confidence');
     expect(wrapper.text()).toContain('Confidence');
@@ -27,7 +27,7 @@ describe('App', () => {
     await wrapper.vm.$nextTick();
 
     // Expect
-    expect(wrapper.text()).toContain("Nombre d'étiquettes");
+    expect(wrapper.text()).toContain("Nombre maximum d'étiquettes");
     expect(wrapper.text()).toContain("Déscription");
     expect(wrapper.text()).toContain("Confiance minimale");
     expect(wrapper.text()).toContain("Confiance");
