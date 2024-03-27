@@ -109,6 +109,13 @@ Run backend:
 $ docker run --name gateway -e VISION_ENDPOINT=<VISION_ENDPOINT> -e VISION_KEY=<VISION_KEY> -e AZURE_DATA_STORAGE_CONNECTION_STRING=<AZURE_DATA_STORAGE_CONNECTION_STRING> -e BUCKET_URI=<BUCKET_URI> -p 80:80 -p 443:443 cpnv-es-ria2/gateway
 ```
 
+If you did setup all of the envrionement variables mentionned above, you can start both container using docker compose.
+To do so run the following commands:
+```shell
+$ cd /path/to/project/dir
+$ docker-compose up
+```
+
 ## Directory structure
 ```shell
 <PROJECT_DIR>
